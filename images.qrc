@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="topgradient.png">images/topgradient.png</file>
+    </qresource>
+</RCC>
