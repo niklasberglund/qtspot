@@ -8,14 +8,14 @@
 #include "sctabbutton.h"
 #include <QDebug>
 
-SCWidget::SCWidget(QWidget *parent) :
+SCWidget::SCWidget(int showTitleBar, QWidget *parent) :
 	QFrame(parent)
 {
 	// style sheet
 	this->setStyleSheet("SCWidget { background-color:#373737; border:1px solid #000000; }");
 
 	// top
-	top = new SCWidgetTop();
+	this->top = new SCWidgetTop();
 
 
 	// layout
@@ -23,7 +23,17 @@ SCWidget::SCWidget(QWidget *parent) :
 	this->content = new QFrame();
 	this->content->setStyleSheet("QFrame { background-color:#2a2a2a; }");
 	this->content->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Expanding);
-	layout->addWidget(top);
+
+	if(showTitleBar == SCWidget::ShowTitleBar)
+	{
+		layout->addWidget(this->top);
+	}
+	else if(showTitleBar == SCWidget::NoTitleBar)
+	{
+		layout->addWidget(new QWidget());
+	}
+
+
 	layout->addWidget(this->content);
 	layout->setMargin(0);
 	layout->setSpacing(0);
@@ -33,8 +43,12 @@ SCWidget::SCWidget(QWidget *parent) :
 
 void SCWidget::setWidget(QWidget *widget)
 {
-	this->content = widget;
-	this->content->update(0, 0, 900, 900);
+	widget->setSizePolicy(this->content->sizePolicy());
+	this->layout->removeWidget(this->content);
+	this->content->update();
 	this->layout->update();
+	this->content = widget;
+	this->content->setStyleSheet("QFrame { background-color:#2a2a2a; }");
+	this->layout->addWidget(this->content);
 	qDebug() << "receive";
 }

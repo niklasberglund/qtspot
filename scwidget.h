@@ -9,7 +9,8 @@ class SCWidget : public QFrame
 {
 Q_OBJECT
 public:
-	SCWidget(QWidget *parent = 0);
+	SCWidget(int showTitleBar = 1, QWidget *parent = 0);
+	enum TitleBar {NoTitleBar, ShowTitleBar};
 
 private:
 	protected:

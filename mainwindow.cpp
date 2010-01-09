@@ -25,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
 	// set up the widgets to be put into the layout
 	leftWidget = new SCWidget();
 	mainWidget = new SCTabWidget();
-	bottomWidget = new SCWidget();
+	bottomWidget = new SCWidget(SCWidget::NoTitleBar);
 
 	leftWidget->setMaximumWidth(150);
 	bottomWidget->setMaximumHeight(70);

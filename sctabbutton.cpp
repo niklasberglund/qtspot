@@ -19,10 +19,11 @@ SCTabButton::SCTabButton(QString tabText, QWidget *widget, QWidget *parent) :
 
 void SCTabButton::selected()
 {
+	emit changeWidget(this->contentWidget);
+
 	this->isActive = true;
 	this->setStyleSheet("SCTabButton { width:auto; height:21px; border:0px solid black; background-color:#2a2a2a; color:#f0f0f0; }");
 
-	emit changeWidget(this->contentWidget);
 	qDebug() << "emit";
 }
 
