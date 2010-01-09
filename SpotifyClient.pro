@@ -23,6 +23,4 @@ HEADERS += mainwindow.h \
     scwidgettop.h \
     sctabbutton.h \
     scmainwindowsplitter.h
-FORMS += mainwindow.ui \
-    mainwindow2.ui
 RESOURCES += images.qrc
