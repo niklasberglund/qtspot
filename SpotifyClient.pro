@@ -10,10 +10,19 @@ SOURCES += main.cpp \
     mainwindow.cpp \
     scdockwidget.cpp \
     sctabwidget.cpp \
-    scwidget.cpp
+    scwidget.cpp \
+    scbutton.cpp \
+    scwidgettop.cpp \
+    sctabbutton.cpp \
+    scmainwindowsplitter.cpp
 HEADERS += mainwindow.h \
     scdockwidget.h \
     sctabwidget.h \
-    scwidget.h
-FORMS += mainwindow.ui
+    scwidget.h \
+    scbutton.h \
+    scwidgettop.h \
+    sctabbutton.h \
+    scmainwindowsplitter.h
+FORMS += mainwindow.ui \
+    mainwindow2.ui
 RESOURCES += images.qrc

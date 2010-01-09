@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QFrame>
+#include "scwidgettop.h"
 
 class SCWidget : public QFrame
 {
@@ -11,12 +12,17 @@ public:
 	SCWidget(QWidget *parent = 0);
 
 private:
-	QFrame *top;
+	protected:
+	SCWidgetTop* getTop();
+	void topAdd(QWidget *widget, int position);
+	SCWidgetTop *top;
+	QWidget *content;
+	QVBoxLayout *layout;
 
 signals:
 
 public slots:
-
+	void setWidget(QWidget *widget);
 };
 
 #endif // SCWIDGET_H

@@ -18,6 +18,9 @@ public:
 
 private:
     Ui::MainWindow *ui;
+	QWidget *leftWidget;
+	QWidget *mainWidget;
+	QWidget *bottomWidget;
 };
 
 #endif // MAINWINDOW_H

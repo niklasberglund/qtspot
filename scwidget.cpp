@@ -3,6 +3,10 @@
 #include <QVBoxLayout>
 #include <QTextEdit>
 #include <QSizePolicy>
+#include <QHBoxLayout>
+#include "scwidgettop.h"
+#include "sctabbutton.h"
+#include <QDebug>
 
 SCWidget::SCWidget(QWidget *parent) :
 	QFrame(parent)
@@ -11,16 +15,26 @@ SCWidget::SCWidget(QWidget *parent) :
 	this->setStyleSheet("SCWidget { background-color:#373737; border:1px solid #000000; }");
 
 	// top
-	top = new QFrame();
-	top->setStyleSheet("QFrame { background-image:url(:/topgradient.png); background-repeat:repeat-x; }");
-	top->setMinimumHeight(21);
+	top = new SCWidgetTop();
+
 
 	// layout
-	QVBoxLayout *layout = new QVBoxLayout();
-	QTextEdit *test2 = new QTextEdit();
-	//test2->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Expanding);
+	layout = new QVBoxLayout();
+	this->content = new QFrame();
+	this->content->setStyleSheet("QFrame { background-color:#2a2a2a; }");
+	this->content->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Expanding);
 	layout->addWidget(top);
-	layout->addWidget(test2);
+	layout->addWidget(this->content);
 	layout->setMargin(0);
+	layout->setSpacing(0);
 	this->setLayout(layout);
+}
+
+
+void SCWidget::setWidget(QWidget *widget)
+{
+	this->content = widget;
+	this->content->update();
+	this->layout->update();
+	qDebug() << "receive";
 }

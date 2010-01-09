@@ -6,19 +6,52 @@
 #include "sctabwidget.h"
 #include <QGridLayout>
 #include <QLineEdit>
+#include "scwidgettop.h"
+#include "scmainwindowsplitter.h"
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent), ui(new Ui::MainWindow)
 {
 	// QMainWindow(parent), ui(new Ui::MainWindow)
-	ui->setupUi(this);
+	//ui->setupUi(this);
 
 	// main window settings
 	this->setMinimumSize(800,600);
 	this->setWindowTitle("Spotify");
 
 	// set up main widget
-	this->setCentralWidget(new SCWidget(this));
+	//SCMainWindowSplitter *mainWindowSplitter = new SCMainWindowSplitter();
+	//this->setCentralWidget(mainWindowSplitter);
+
+	// set up the widgets to be put into the layout
+	leftWidget = new SCWidget();
+	mainWidget = new SCTabWidget();
+	bottomWidget = new SCWidget();
+
+	leftWidget->setMaximumWidth(150);
+	bottomWidget->setMaximumHeight(70);
+
+	// set up splitters
+	QSplitter *mainVerticalSplitter = new QSplitter(); // splits the main window in 2 - upper parts and playback widget
+	QSplitter *subHorizontalSplitter = new QSplitter(); // splits the upper part horizontally
+
+	// add widgets to the splitters
+	subHorizontalSplitter->addWidget(leftWidget);
+	subHorizontalSplitter->addWidget(mainWidget);
+	mainVerticalSplitter->addWidget(subHorizontalSplitter);
+	mainVerticalSplitter->addWidget(bottomWidget);
+
+	// splitter options
+	mainVerticalSplitter->setOrientation(Qt::Vertical);
+	mainVerticalSplitter->handle(1)->hide(); // dont display handle
+	subHorizontalSplitter->setOrientation(Qt::Horizontal);
+
+
+	this->setCentralWidget(mainVerticalSplitter);
+
+
+	// test
+	//ui->leftDockWidget->setTitleBarWidget(new QTimeEdit());
 
 	// set up widgets
 	//SCWidget *testWidget = new SCWidget(this);
