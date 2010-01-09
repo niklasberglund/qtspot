@@ -13,10 +13,9 @@ SCWidgetTop::SCWidgetTop(QWidget *parent) :
 	// set up layouts
 	mainBoxLayout = new QHBoxLayout();
 	mainBoxLayout->setMargin(0);
-	mainBoxLayout->addSpacerItem(new QSpacerItem(20,20, QSizePolicy::Expanding, QSizePolicy::Expanding));
 	leftBoxLayout = new QHBoxLayout();
 	rightBoxLayout = new QHBoxLayout();
-	QSpacerItem *middleSpacerItem = new QSpacerItem(21, 21, QSizePolicy::Maximum); // horizontally expanding QSpacerItem
+	QSpacerItem *middleSpacerItem = new QSpacerItem(21, 21, QSizePolicy::Expanding); // horizontally expanding QSpacerItem
 
 	// add items to main layout
 	mainBoxLayout->addLayout(leftBoxLayout);

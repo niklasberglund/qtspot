@@ -34,7 +34,7 @@ SCWidget::SCWidget(QWidget *parent) :
 void SCWidget::setWidget(QWidget *widget)
 {
 	this->content = widget;
-	this->content->update();
+	this->content->update(0, 0, 900, 900);
 	this->layout->update();
 	qDebug() << "receive";
 }
