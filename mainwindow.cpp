@@ -1,5 +1,4 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
 #include "sctabwidget.h"
 #include <QTimeEdit>
 #include "scwidget.h"
@@ -10,7 +9,7 @@
 #include "scmainwindowsplitter.h"
 
 MainWindow::MainWindow(QWidget *parent)
-	: QMainWindow(parent), ui(new Ui::MainWindow)
+	: QMainWindow(parent)
 {
 	// QMainWindow(parent), ui(new Ui::MainWindow)
 	//ui->setupUi(this);
