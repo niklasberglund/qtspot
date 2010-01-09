@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/">
         <file alias="topgradient.png">images/topgradient.png</file>
+        <file>images/pausebutton.gif</file>
+        <file>images/previousButton.gif</file>
+        <file>images/nextButton.gif</file>
     </qresource>
 </RCC>
