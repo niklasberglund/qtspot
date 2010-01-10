@@ -4,7 +4,6 @@
         <file>images/previousButton.gif</file>
         <file>images/nextButton.gif</file>
         <file>images/bottomgradient.gif</file>
-        <file>images/previousButtonMask.gif</file>
         <file>images/pauseButton.gif</file>
     </qresource>
 </RCC>
