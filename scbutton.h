@@ -2,6 +2,7 @@
 #define SCBUTTON_H
 
 #include <QPushButton>
+#include <QIcon>
 
 class SCButton : public QPushButton
 {

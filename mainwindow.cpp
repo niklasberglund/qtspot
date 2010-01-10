@@ -7,6 +7,8 @@
 #include <QLineEdit>
 #include "scwidgettop.h"
 #include "scmainwindowsplitter.h"
+#include "scplaybackwidget.h"
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
@@ -25,10 +27,11 @@ MainWindow::MainWindow(QWidget *parent)
 	// set up the widgets to be put into the layout
 	leftWidget = new SCWidget();
 	mainWidget = new SCTabWidget();
-	bottomWidget = new SCWidget(SCWidget::NoTitleBar);
+	bottomWidget = new SCPlaybackWidget();
 
 	leftWidget->setMaximumWidth(150);
-	bottomWidget->setMaximumHeight(70);
+	bottomWidget->setMaximumHeight(41);
+	bottomWidget->setMinimumHeight(41);
 
 	// set up splitters
 	QSplitter *mainVerticalSplitter = new QSplitter(); // splits the main window in 2 - upper parts and playback widget
@@ -44,6 +47,20 @@ MainWindow::MainWindow(QWidget *parent)
 	mainVerticalSplitter->setOrientation(Qt::Vertical);
 	mainVerticalSplitter->handle(1)->hide(); // dont display handle
 	subHorizontalSplitter->setOrientation(Qt::Horizontal);
+
+	// hide the splitters' handles
+	QSplitterHandle *mainVerticalSplitterHandle = mainVerticalSplitter->handle(1);
+	if(mainVerticalSplitterHandle)
+	{
+		qDebug() << "got handle";
+		mainVerticalSplitterHandle->setVisible(false);
+		mainVerticalSplitterHandle->hide();
+		mainVerticalSplitterHandle->setHidden(true);
+	}
+	else
+	{
+		qDebug() << "could not get handle";
+	}
 
 
 	this->setCentralWidget(mainVerticalSplitter);

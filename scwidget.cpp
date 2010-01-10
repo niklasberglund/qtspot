@@ -44,11 +44,9 @@ SCWidget::SCWidget(int showTitleBar, QWidget *parent) :
 void SCWidget::setWidget(QWidget *widget)
 {
 	widget->setSizePolicy(this->content->sizePolicy());
+	widget->setStyleSheet("QFrame { background-color:#2a2a2a; }");
 	this->layout->removeWidget(this->content);
-	this->content->update();
-	this->layout->update();
 	this->content = widget;
-	this->content->setStyleSheet("QFrame { background-color:#2a2a2a; }");
 	this->layout->addWidget(this->content);
 	qDebug() << "receive";
 }

@@ -1,5 +1,6 @@
 #include "scmainwindowsplitter.h"
 #include <QLineEdit>
+#include <QDebug>
 
 SCMainWindowSplitter::SCMainWindowSplitter(QWidget *parent) :
     QSplitter(parent)
@@ -12,6 +13,13 @@ SCMainWindowSplitter::SCMainWindowSplitter(QWidget *parent) :
 
 	// playback control widget
 	this->addWidget(new QWidget());
+
+	// test
+	QSplitterHandle *handle = this->handle(1);
+	if(true)
+	{
+		qDebug() << "got handle";
+	}
 }
 
 
