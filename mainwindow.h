@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QtGui/QMainWindow>
+#include "scwidget.h"
 
 namespace Ui
 {
@@ -18,7 +19,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
-	QWidget *leftWidget;
+	SCWidget *leftWidget;
 	QWidget *mainWidget;
 	QWidget *bottomWidget;
 };

@@ -27,6 +27,6 @@ void SCTabWidget::addTab(QString title, QWidget *widget, int position)
 	// add to list
 	tabButtons->append(tabButton);
 
-	QObject::connect(tabButton, SIGNAL(changeWidget(QWidget*)), this, SLOT(setWidget(QWidget*)));
+	QObject::connect(tabButton, SIGNAL(changeWidget(QWidget*)), this, SLOT(showWidget(QWidget*)));
 }
 

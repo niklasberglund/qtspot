@@ -9,6 +9,7 @@
 #include "scmainwindowsplitter.h"
 #include "scplaybackwidget.h"
 #include <QDebug>
+#include "sctablewidget.h"
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
@@ -26,10 +27,12 @@ MainWindow::MainWindow(QWidget *parent)
 
 	// set up the widgets to be put into the layout
 	leftWidget = new SCWidget();
+	leftWidget->setWidget(new SCTableWidget());
 	mainWidget = new SCTabWidget();
 	bottomWidget = new SCPlaybackWidget();
 
 	leftWidget->setMaximumWidth(150);
+	leftWidget->setMinimumWidth(150);
 	bottomWidget->setMaximumHeight(41);
 	bottomWidget->setMinimumHeight(41);
 
@@ -45,22 +48,11 @@ MainWindow::MainWindow(QWidget *parent)
 
 	// splitter options
 	mainVerticalSplitter->setOrientation(Qt::Vertical);
-	mainVerticalSplitter->handle(1)->hide(); // dont display handle
 	subHorizontalSplitter->setOrientation(Qt::Horizontal);
 
 	// hide the splitters' handles
-	QSplitterHandle *mainVerticalSplitterHandle = mainVerticalSplitter->handle(1);
-	if(mainVerticalSplitterHandle)
-	{
-		qDebug() << "got handle";
-		mainVerticalSplitterHandle->setVisible(false);
-		mainVerticalSplitterHandle->hide();
-		mainVerticalSplitterHandle->setHidden(true);
-	}
-	else
-	{
-		qDebug() << "could not get handle";
-	}
+	mainVerticalSplitter->setHandleWidth(1);
+	subHorizontalSplitter->setHandleWidth(1);
 
 
 	this->setCentralWidget(mainVerticalSplitter);

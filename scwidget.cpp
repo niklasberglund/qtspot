@@ -45,8 +45,13 @@ void SCWidget::setWidget(QWidget *widget)
 {
 	widget->setSizePolicy(this->content->sizePolicy());
 	widget->setStyleSheet("QFrame { background-color:#2a2a2a; }");
-	this->layout->removeWidget(this->content);
+	this->content->hide();
+	//this->layout->removeWidget(this->content);
 	this->content = widget;
 	this->layout->addWidget(this->content);
-	qDebug() << "receive";
+}
+
+void SCWidget::showWidget(QWidget *widget)
+{
+	this->setWidget(widget);
 }

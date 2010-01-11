@@ -1,13 +1,13 @@
 #ifndef SCTABLEWIDGET_H
 #define SCTABLEWIDGET_H
 
-#include <QTableWidget>
+#include <QTableView>
 
-class SCTableWidget : public QTableWidget
+class SCTableView : public QTableView
 {
 Q_OBJECT
 public:
-    explicit SCTableWidget(QWidget *parent = 0);
+	explicit SCTableView(QWidget *parent = 0);
 
 signals:
 

@@ -11,6 +11,7 @@ Q_OBJECT
 public:
 	SCWidget(int showTitleBar = 1, QWidget *parent = 0);
 	enum TitleBar {NoTitleBar, ShowTitleBar};
+	void setWidget(QWidget *widget);
 
 private:
 	protected:
@@ -23,7 +24,7 @@ private:
 signals:
 
 public slots:
-	void setWidget(QWidget *widget);
+	void showWidget(QWidget *widget);
 };
 
 #endif // SCWIDGET_H
