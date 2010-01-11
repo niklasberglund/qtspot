@@ -17,7 +17,7 @@ SOURCES += main.cpp \
     scmainwindowsplitter.cpp \
     scplaybackwidget.cpp \
     sciconbutton.cpp \
-    sctablewidget.cpp
+	sctableview.cpp
 HEADERS += mainwindow.h \
     scdockwidget.h \
     sctabwidget.h \
@@ -28,5 +28,5 @@ HEADERS += mainwindow.h \
     scmainwindowsplitter.h \
     scplaybackwidget.h \
     sciconbutton.h \
-    sctablewidget.h
+	sctableview.h
 RESOURCES += images.qrc

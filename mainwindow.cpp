@@ -9,7 +9,7 @@
 #include "scmainwindowsplitter.h"
 #include "scplaybackwidget.h"
 #include <QDebug>
-#include "sctablewidget.h"
+#include "sctableview.h"
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 	// set up the widgets to be put into the layout
 	leftWidget = new SCWidget();
-	leftWidget->setWidget(new SCTableWidget());
+	leftWidget->setWidget(new SCTableView());
 	mainWidget = new SCTabWidget();
 	bottomWidget = new SCPlaybackWidget();
 
