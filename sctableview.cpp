@@ -11,8 +11,7 @@ SCTableView::SCTableView(QWidget *parent) :
 	this->verticalHeader()->hide();
 	this->setGridStyle(Qt::NoPen);
 
+	// set up the model
 	SCPlaylistItemModel *itemModel = new SCPlaylistItemModel();
-
 	this->setModel(itemModel);
-	this->resize(100,100);
 }
