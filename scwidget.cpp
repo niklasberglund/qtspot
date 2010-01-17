@@ -7,6 +7,7 @@
 #include "scwidgettop.h"
 #include "sctabbutton.h"
 #include <QDebug>
+#include <QLineEdit>
 
 SCWidget::SCWidget(int showTitleBar, QWidget *parent) :
 	QFrame(parent)
@@ -19,37 +20,84 @@ SCWidget::SCWidget(int showTitleBar, QWidget *parent) :
 
 
 	// layout
-	layout = new QVBoxLayout();
+	this->verticalLayout = new QVBoxLayout();
 	this->content = new QFrame();
 	this->content->setStyleSheet("QFrame { background-color:#2a2a2a; }");
-	this->content->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Expanding);
+	this->content->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
 	if(showTitleBar == SCWidget::ShowTitleBar)
 	{
-		layout->addWidget(this->top);
+		verticalLayout->addWidget(this->top);
 	}
 	else if(showTitleBar == SCWidget::NoTitleBar)
 	{
-		layout->addWidget(new QWidget());
+		verticalLayout->addWidget(new QWidget()); // this is not how we want to handle it... TODO
 	}
 
 
-	layout->addWidget(this->content);
-	layout->setMargin(0);
-	layout->setSpacing(0);
-	this->setLayout(layout);
+	verticalLayout->addWidget(this->content);
+	verticalLayout->setMargin(0);
+	verticalLayout->setSpacing(0);
+	this->setLayout(verticalLayout);
 }
 
 
 void SCWidget::setWidget(QWidget *widget)
 {
 	widget->setSizePolicy(this->content->sizePolicy());
-	widget->setStyleSheet("QFrame { background-color:#2a2a2a; }");
-	this->content->hide();
-	//this->layout->removeWidget(this->content);
+	widget->setStyleSheet("background-color:#2A2A2A; color:#C5CCCC");
+
+	this->verticalLayout->removeWidget(this->content);
+	this->verticalLayout->addWidget(widget);
+
+	this->content = widget;
+
+	// attempt to a temporary fix
+	/*
+	widget->setSizePolicy(this->content->sizePolicy());
+	widget->setStyleSheet("background-color:#2A2A2A; color:#C5CCCC");
+
+	QVBoxLayout *newLayout = new QVBoxLayout();
+	//newLayout->addWidget(new QLineEdit());
+	newLayout->addWidget(widget);
+
+	// remove old layout
+	delete this->layout();
+
+	// set new layout
+	this->setLayout(newLayout);
+	*/
+
+	// should be doing something like this
+	/*
+
+	// is there already a widget set?
+	if(this->content)
+	{
+		this->layout->removeWidget(this->content);
+	}
+
+	setSizePolicy(this->content->sizePolicy());
+	widget->setStyleSheet("background-color:#2A2A2A; color:#C5CCCC");
+	//widget->setStyleSheet("background-color:red;"); // for debugging
 	this->content = widget;
 	this->layout->addWidget(this->content);
+*/
+
+
+/*	widget->setSizePolicy(this->content->sizePolicy());
+	widget->setStyleSheet("QFrame { background-color:#2a2a2a; }");
+	this->content = widget;
+	this->content->update();
+	this->layout->update();
+
+	this->content->setVisible(false);
+	this->layout->removeWidget(this->content);
+	this->content = widget;
+	this->layout->addWidget(widget);
+*/
 }
+
 
 void SCWidget::showWidget(QWidget *widget)
 {

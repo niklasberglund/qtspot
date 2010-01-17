@@ -17,7 +17,12 @@ SOURCES += main.cpp \
     scmainwindowsplitter.cpp \
     scplaybackwidget.cpp \
     sciconbutton.cpp \
-	sctableview.cpp
+    sctableview.cpp \
+    scplaylisttablemodel.cpp \
+    scplaylistitemmodel.cpp \
+    scmaster.cpp \
+    scwidgetbase.cpp \
+    scwidgetcontainerbase.cpp
 HEADERS += mainwindow.h \
     scdockwidget.h \
     sctabwidget.h \
@@ -28,5 +33,10 @@ HEADERS += mainwindow.h \
     scmainwindowsplitter.h \
     scplaybackwidget.h \
     sciconbutton.h \
-	sctableview.h
+    sctableview.h \
+    scplaylisttablemodel.h \
+    scplaylistitemmodel.h \
+    scmaster.h \
+    scwidgetbase.h \
+    scwidgetcontainerbase.h
 RESOURCES += images.qrc

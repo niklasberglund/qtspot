@@ -6,8 +6,9 @@
 #include <QHBoxLayout>
 #include <QSpacerItem>
 #include <QPushButton>
+#include "scwidget.h"
 
-class SCPlaybackWidget : public QFrame
+class SCPlaybackWidget : public SCWidget
 {
 Q_OBJECT
 public:

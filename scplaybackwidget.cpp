@@ -6,8 +6,7 @@
 #include <QRegion>
 #include "sciconbutton.h"
 
-SCPlaybackWidget::SCPlaybackWidget(QWidget *parent) :
-	QFrame(parent)
+SCPlaybackWidget::SCPlaybackWidget(QWidget *parent) : SCWidget(0, parent)
 {
 	// initialize layouts and spacer
 	this->mainBoxLayout = new QHBoxLayout();
@@ -35,9 +34,9 @@ SCPlaybackWidget::SCPlaybackWidget(QWidget *parent) :
 	this->leftBoxLayout->addWidget(this->playPauseButton);
 	this->leftBoxLayout->addWidget(this->nextButton);
 
-	this->mainBoxLayout->addLayout(leftBoxLayout);
+	this->mainBoxLayout->addLayout(this->leftBoxLayout);
 	this->mainBoxLayout->addSpacerItem(this->middleSpacer);
-	this->mainBoxLayout->addLayout(rightBoxLayout);
+	this->mainBoxLayout->addLayout(this->rightBoxLayout);
 
-	this->setLayout(this->mainBoxLayout);
+	this->content->setLayout(this->mainBoxLayout);
 }

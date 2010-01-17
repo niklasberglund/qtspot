@@ -3,6 +3,7 @@
 
 #include <QtGui/QMainWindow>
 #include "scwidget.h"
+#include "scmaster.h"
 
 namespace Ui
 {
@@ -22,6 +23,7 @@ private:
 	SCWidget *leftWidget;
 	QWidget *mainWidget;
 	QWidget *bottomWidget;
+	SCMaster *master;
 };
 
 #endif // MAINWINDOW_H

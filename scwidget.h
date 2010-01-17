@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QFrame>
+#include "scwidget.h"
 #include "scwidgettop.h"
 
 class SCWidget : public QFrame
@@ -19,7 +20,7 @@ private:
 	void topAdd(QWidget *widget, int position);
 	SCWidgetTop *top;
 	QWidget *content;
-	QVBoxLayout *layout;
+	QVBoxLayout *verticalLayout;
 
 signals:
 

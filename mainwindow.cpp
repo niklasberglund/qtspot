@@ -14,37 +14,42 @@
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
 {
+	this->master = new SCMaster();
 	// QMainWindow(parent), ui(new Ui::MainWindow)
 	//ui->setupUi(this);
 
 	// main window settings
-	this->setMinimumSize(800,600);
+	this->setMinimumSize(600,400);
 	this->setWindowTitle("Spotify");
 
 	// set up main widget
 	//SCMainWindowSplitter *mainWindowSplitter = new SCMainWindowSplitter();
 	//this->setCentralWidget(mainWindowSplitter);
 
-	// set up the widgets to be put into the layout
-	leftWidget = new SCWidget();
+	// set up the left widget
+	SCWidget *leftWidget = new SCWidget();
 	leftWidget->setWidget(new SCTableView());
-	mainWidget = new SCTabWidget();
-	bottomWidget = new SCPlaybackWidget();
 
-	leftWidget->setMaximumWidth(150);
-	leftWidget->setMinimumWidth(150);
-	bottomWidget->setMaximumHeight(41);
-	bottomWidget->setMinimumHeight(41);
+	// set up the widgets to be put into the layout
+	this->master->setLeftWidget(new SCWidget());
+	this->master->getLeftWidget()->setWidget(new SCTableView());
+	this->master->setMainWidget(new SCTabWidget());
+	this->master->setBottomWidget(new SCPlaybackWidget());
+
+	this->master->getLeftWidget()->setMaximumWidth(150);
+	this->master->getLeftWidget()->setMinimumWidth(150);
+	this->master->getBottomWidget()->setMaximumHeight(41);
+	this->master->getBottomWidget()->setMinimumHeight(41);
 
 	// set up splitters
 	QSplitter *mainVerticalSplitter = new QSplitter(); // splits the main window in 2 - upper parts and playback widget
 	QSplitter *subHorizontalSplitter = new QSplitter(); // splits the upper part horizontally
 
 	// add widgets to the splitters
-	subHorizontalSplitter->addWidget(leftWidget);
-	subHorizontalSplitter->addWidget(mainWidget);
+	subHorizontalSplitter->addWidget(this->master->getLeftWidget());
+	subHorizontalSplitter->addWidget(this->master->getMainWidget());
 	mainVerticalSplitter->addWidget(subHorizontalSplitter);
-	mainVerticalSplitter->addWidget(bottomWidget);
+	mainVerticalSplitter->addWidget(this->master->getBottomWidget());
 
 	// splitter options
 	mainVerticalSplitter->setOrientation(Qt::Vertical);
