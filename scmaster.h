@@ -3,8 +3,6 @@
 
 #include <QWidget>
 #include "scwidget.h"
-#include "scwidgetbase.h"
-#include "scwidgetcontainerbase.h"
 #include "sctableview.h"
 
 

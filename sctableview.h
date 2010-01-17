@@ -2,7 +2,6 @@
 #define SCTABLEWIDGET_H
 
 #include <QTableView>
-#include "scwidgetcontainerbase.h"
 
 
 class SCTableView : public QTableView
