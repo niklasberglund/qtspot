@@ -4,9 +4,13 @@
 #include <QPalette>
 
 
-SCTableView::SCTableView(int zebra, int horizontalLabels, QWidget *parent) :
+SCTableView::SCTableView(SCItemModel *useItemModel, int zebra, int horizontalLabels, QWidget *parent) :
 	QTableView(parent)
 {
+	// set up the model
+	this->tableItemModel = useItemModel;
+	this->setModel(this->tableItemModel);
+
 	// set up the colors
 	this->firstRowColor = QColor(37, 37, 37);
 	this->secondRowColor = QColor(42, 42, 42);
@@ -35,8 +39,8 @@ SCTableView::SCTableView(int zebra, int horizontalLabels, QWidget *parent) :
 	this->setGridStyle(Qt::NoPen);
 
 	// set up the model
-	SCPlaylistItemModel *itemModel = new SCPlaylistItemModel();
-	this->setModel(itemModel);
+	//SCPlaylistItemModel *itemModel = new SCPlaylistItemModel();
+	//this->setModel(itemModel);
 
 	// not editable
 	this->setEditTriggers(QAbstractItemView::NoEditTriggers);

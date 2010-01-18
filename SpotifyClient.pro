@@ -21,7 +21,9 @@ SOURCES += main.cpp \
     scplaylistitemmodel.cpp \
     scmaster.cpp \
     scplaylist.cpp \
-    scitemmodel.cpp
+    scitemmodel.cpp \
+    sctracklistitemmodel.cpp \
+    sctrack.cpp
 HEADERS += mainwindow.h \
     scdockwidget.h \
     sctabwidget.h \
@@ -36,5 +38,7 @@ HEADERS += mainwindow.h \
     scplaylistitemmodel.h \
     scmaster.h \
     scplaylist.h \
-    scitemmodel.h
+    scitemmodel.h \
+    sctracklistitemmodel.h \
+    sctrack.h
 RESOURCES += images.qrc

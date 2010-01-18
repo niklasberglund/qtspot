@@ -2,19 +2,21 @@
 #define SCTABLEWIDGET_H
 
 #include <QTableView>
+#include "scitemmodel.h"
 
 
 class SCTableView : public QTableView
 {
 Q_OBJECT
 public:
-	SCTableView(int zebra = SCTableView::WithoutZebraRows, int horizontalLabels = SCTableView::WithHorizontalLabels, QWidget *parent = 0);
+	SCTableView(SCItemModel *useItemModel = 0, int zebra = SCTableView::WithoutZebraRows, int horizontalLabels = SCTableView::WithHorizontalLabels, QWidget *parent = 0);
 
 	// enums
 	enum ZebraRows {WithoutZebraRows, WithZebraRows};
 	enum HorizontalLabels {WithHorizontalLabels, WithoutHorizontalLabels};
 
 private:
+	SCItemModel *tableItemModel;
 	QColor firstRowColor;
 	QColor secondRowColor;
 

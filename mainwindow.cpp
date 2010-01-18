@@ -10,6 +10,8 @@
 #include "scplaybackwidget.h"
 #include <QDebug>
 #include "sctableview.h"
+#include "sctracklistitemmodel.h"
+#include "scplaylistitemmodel.h"
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
@@ -22,14 +24,21 @@ MainWindow::MainWindow(QWidget *parent)
 	this->resize(800, 600); // initial size
 	this->setWindowTitle("Spotify");
 
-	// set up the left widget
-	SCWidget *leftWidget = new SCWidget();
-	leftWidget->setWidget(new SCTableView());
+	// set up the playlist widget(left)
+	SCPlaylistItemModel *playlistItemModel = new SCPlaylistItemModel();
+
+	// set up the main widget, and add some dummy tabs
+	SCTabWidget *mainTabWidget = new SCTabWidget();
+	mainTabWidget->addTab("line edit", new QLineEdit());
+	SCTrackListItemModel *trackListItemModel = new SCTrackListItemModel();
+	SCTableView *dummyTable = new SCTableView(trackListItemModel);
+	mainTabWidget->addTab("table test", dummyTable);
+
 
 	// set up the widgets to be put into the layout
 	this->master->setLeftWidget(new SCWidget());
-	this->master->getLeftWidget()->setWidget(new SCTableView());
-	this->master->setMainWidget(new SCTabWidget());
+	this->master->getLeftWidget()->setWidget(new SCTableView(playlistItemModel, SCTableView::WithoutZebraRows, SCTableView::WithoutHorizontalLabels));
+	this->master->setMainWidget(mainTabWidget);
 	this->master->setBottomWidget(new SCPlaybackWidget());
 
 	this->master->getLeftWidget()->setMaximumWidth(150);
