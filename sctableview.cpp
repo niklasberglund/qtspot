@@ -14,4 +14,7 @@ SCTableView::SCTableView(QWidget *parent) :
 	// set up the model
 	SCPlaylistItemModel *itemModel = new SCPlaylistItemModel();
 	this->setModel(itemModel);
+
+	// not editable
+	this->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }

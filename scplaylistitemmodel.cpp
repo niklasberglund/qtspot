@@ -28,6 +28,8 @@ void SCPlaylistItemModel::addPlaylist(SCPlaylist *playlist)
 	this->setData(this->indexFromItem(newItem), QFont("Arial", 11), Qt::FontRole);
 
 
+	// NOTE: just noticed that zebra rows are implemented in QAbstractItemView... see QAbstractItemView::alternatingRowColors
+	// zebra rows
 	QColor backgroundColor; // holds the background color of the row to be added
 
 	if(this->zebraStyle == SCPlaylistItemModel::WithZebraRows)
