@@ -3,13 +3,9 @@
 #include <QFont>
 
 
-SCPlaylistItemModel::SCPlaylistItemModel(int zebra, QObject *parent) : QStandardItemModel(parent)
+SCPlaylistItemModel::SCPlaylistItemModel(QObject *parent) : SCItemModel(parent)
 {
-	// default values
-	this->zebraStyle = zebra;
-	this->isEvenRow = true;
-	this->evenRowBackgroundColor = QColor(42, 42, 42);
-	this->oddRowBackgroundColor = QColor(37, 37, 37);
+	this->setHorizontalHeaderLabels(QStringList() << "title" << "something");
 
 	QStandardItem *testItem = new QStandardItem("asdqwes");
 	this->playlistList = new QList<QStandardItem*>();
@@ -21,6 +17,13 @@ SCPlaylistItemModel::SCPlaylistItemModel(int zebra, QObject *parent) : QStandard
 
 void SCPlaylistItemModel::addPlaylist(SCPlaylist *playlist)
 {
+	QList<QStandardItem*> items = QList<QStandardItem*>();
+	items.append(new QStandardItem("asd"));
+	items.append(new QStandardItem("qwe"));
+
+	this->appendRow(items);
+
+	/*
 	// set up
 	QStandardItem *newItem = new QStandardItem(playlist->getName());
 	this->playlistList->append(newItem);
@@ -52,4 +55,5 @@ void SCPlaylistItemModel::addPlaylist(SCPlaylist *playlist)
 	this->setData(this->indexFromItem(newItem), backgroundColor, Qt::BackgroundRole);
 
 	this->isEvenRow = !this->isEvenRow; // toggle true/false
+	*/
 }

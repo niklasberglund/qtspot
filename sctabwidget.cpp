@@ -3,6 +3,7 @@
 #include "sctabbutton.h"
 #include <QLineEdit>
 #include <QCheckBox>
+#include "sctableview.h"
 
 SCTabWidget::SCTabWidget(QWidget *parent) : SCWidget(SCWidget::ShowTitleBar, parent)
 {
@@ -15,6 +16,7 @@ SCTabWidget::SCTabWidget(QWidget *parent) : SCWidget(SCWidget::ShowTitleBar, par
 	// top
 	this->addTab("asd", new QCheckBox());
 	this->addTab("test", new QLineEdit());
+	this->addTab("table", new SCTableView());
 	this->addTab("qweqwe", new QWidget(), 1);
 }
 

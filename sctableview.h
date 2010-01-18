@@ -8,7 +8,15 @@ class SCTableView : public QTableView
 {
 Q_OBJECT
 public:
-	explicit SCTableView(QWidget *parent = 0);
+	SCTableView(int zebra = SCTableView::WithoutZebraRows, int horizontalLabels = SCTableView::WithHorizontalLabels, QWidget *parent = 0);
+
+	// enums
+	enum ZebraRows {WithoutZebraRows, WithZebraRows};
+	enum HorizontalLabels {WithHorizontalLabels, WithoutHorizontalLabels};
+
+private:
+	QColor firstRowColor;
+	QColor secondRowColor;
 
 signals:
 
