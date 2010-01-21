@@ -1,0 +1,11 @@
+QFrame { background-color:#2a2a2a; }
+
+SCTableView
+{
+	background-color:red;
+}
+
+SCPlaybackWidget
+{
+	background-color:blue;
+}
