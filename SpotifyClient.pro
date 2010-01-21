@@ -7,8 +7,7 @@ QT += network \
 TARGET = SpotifyClient
 TEMPLATE = app
 SOURCES += main.cpp \
-    mainwindow.cpp \
-    scdockwidget.cpp \
+	mainwindow.cpp \
     sctabwidget.cpp \
     scwidget.cpp \
     scbutton.cpp \
@@ -25,7 +24,6 @@ SOURCES += main.cpp \
     sctracklistitemmodel.cpp \
     sctrack.cpp
 HEADERS += mainwindow.h \
-    scdockwidget.h \
     sctabwidget.h \
     scwidget.h \
     scbutton.h \
