@@ -14,12 +14,12 @@ SCPlaybackWidget::SCPlaybackWidget(QWidget *parent) : SCWidget(0, parent)
 	this->middleSpacer = new QSpacerItem(10, 10, QSizePolicy::Expanding, QSizePolicy::Expanding);
 	this->rightBoxLayout = new QHBoxLayout();
 
-	this->setStyleSheet("SCPlaybackWidget { background-image:url(':images/bottomgradient.gif'); background-repeat: repeat-xy; }");
+	//this->setStyleSheet("SCPlaybackWidget { background-image:url(':images/bottomgradient.gif'); background-repeat: repeat-xy; }");
 
 	// set up playback buttons
-	this->previousButton = new SCIconButton(QIcon(":images/previousButton.gif"));
-	this->playPauseButton = new SCIconButton(QIcon(":images/pauseButton.gif"));
-	this->nextButton = new SCIconButton(QIcon(":images/nextButton.gif"));
+	this->previousButton = new SCIconButton(QIcon(":resources/images/previousButton.gif"));
+	this->playPauseButton = new SCIconButton(QIcon(":resources/images/pauseButton.gif"));
+	this->nextButton = new SCIconButton(QIcon(":resources/images/nextButton.gif"));
 
 	// set buttons' masks
 	//this->previousButton->setMask(QBitmap(":images/previousButtonMask.gif"));

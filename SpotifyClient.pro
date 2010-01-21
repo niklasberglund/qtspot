@@ -41,4 +41,5 @@ HEADERS += mainwindow.h \
     scitemmodel.h \
     sctracklistitemmodel.h \
     sctrack.h
-RESOURCES += images.qrc
+RESOURCES += resources.qrc
+OTHER_FILES += resources/stylesheets/application.qss

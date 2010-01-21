@@ -1,11 +1,10 @@
-QFrame { background-color:#2a2a2a; }
-
-SCTableView
+QWidget
 {
-	background-color:red;
+	background-color:#2a2a2a;
 }
 
-SCPlaybackWidget
+SCWidgetTop, SCIconButton
 {
-	background-color:blue;
+	background-image:url(:/topgradient.png); background-repeat:repeat-x;
 }
+

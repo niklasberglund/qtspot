@@ -6,4 +6,7 @@
         <file>resources/images/bottomgradient.gif</file>
         <file>resources/images/pauseButton.gif</file>
     </qresource>
+    <qresource prefix="/stylesheets">
+        <file alias="application.qss">resources/stylesheets/application.qss</file>
+    </qresource>
 </RCC>

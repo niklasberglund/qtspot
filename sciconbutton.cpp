@@ -15,7 +15,7 @@ SCIconButton::SCIconButton(QIcon buttonIcon, QWidget *parent) : SCButton(parent)
 	this->setMaximumSize(this->width, this->height);
 
 	// debug
-	this->setStyleSheet("SCIconButton { border:1px solid red; }");
+	//this->setStyleSheet("SCIconButton { border:1px solid red; }");
 }
 
 

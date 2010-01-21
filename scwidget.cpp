@@ -13,7 +13,7 @@ SCWidget::SCWidget(int showTitleBar, QWidget *parent) :
 	QFrame(parent)
 {
 	// style sheet
-	this->setStyleSheet("SCWidget { background-color:#373737; border:1px solid #000000; }");
+	//this->setStyleSheet("SCWidget { background-color:#373737; border:1px solid #000000; }");
 
 	// top
 	this->top = new SCWidgetTop();
@@ -22,7 +22,7 @@ SCWidget::SCWidget(int showTitleBar, QWidget *parent) :
 	// layout
 	this->verticalLayout = new QVBoxLayout();
 	this->content = new QFrame();
-	this->content->setStyleSheet("QFrame { background-color:#2a2a2a; }");
+	//this->content->setStyleSheet("QFrame { background-color:#2a2a2a; }");
 	this->content->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
 	if(showTitleBar == SCWidget::ShowTitleBar)

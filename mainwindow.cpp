@@ -12,6 +12,7 @@
 #include "sctableview.h"
 #include "sctracklistitemmodel.h"
 #include "scplaylistitemmodel.h"
+#include <QFile>
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
@@ -23,6 +24,11 @@ MainWindow::MainWindow(QWidget *parent)
 	this->setMinimumSize(600,400);
 	this->resize(800, 600); // initial size
 	this->setWindowTitle("Spotify");
+
+	// apply application-wide stylesheet from qss-file
+	QFile styleSheetFile(":stylesheets/application.qss");
+	styleSheetFile.open(QFile::ReadOnly);
+	this->setStyleSheet(QString(styleSheetFile.readAll().data())); // this is not the optimal solution... must do clean then install for changes in qcc file to take effect
 
 	// set up the playlist widget(left)
 	SCPlaylistItemModel *playlistItemModel = new SCPlaylistItemModel();
@@ -61,8 +67,8 @@ MainWindow::MainWindow(QWidget *parent)
 	subHorizontalSplitter->setOrientation(Qt::Horizontal);
 
 	// hide the splitters' handles
-	mainVerticalSplitter->setHandleWidth(1);
-	subHorizontalSplitter->setHandleWidth(1);
+	mainVerticalSplitter->setHandleWidth(2);
+	subHorizontalSplitter->setHandleWidth(20);
 
 	// display the widgets we have set up
 	this->setCentralWidget(mainVerticalSplitter);

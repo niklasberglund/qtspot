@@ -11,7 +11,7 @@ SCTabWidget::SCTabWidget(QWidget *parent) : SCWidget(SCWidget::ShowTitleBar, par
 	tabButtons = new QList<SCTabButton*>();
 
 	// style sheet
-	this->setStyleSheet("SCWidget { background-color:#373737; border:1px solid #000000; }");
+	//this->setStyleSheet("SCWidget { background-color:#373737; border:1px solid #000000; }");
 
 	// top
 	this->addTab("asd", new QCheckBox());
