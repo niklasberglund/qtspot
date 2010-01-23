@@ -68,7 +68,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 	// hide the splitters' handles
 	mainVerticalSplitter->setHandleWidth(2);
-	subHorizontalSplitter->setHandleWidth(20);
+	subHorizontalSplitter->setHandleWidth(2);
 
 	// display the widgets we have set up
 	this->setCentralWidget(mainVerticalSplitter);

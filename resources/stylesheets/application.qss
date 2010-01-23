@@ -8,3 +8,23 @@ SCWidgetTop, SCIconButton
 	background-image:url(:/topgradient.png); background-repeat:repeat-x;
 }
 
+SCTabButton
+{
+	background-image:url(:/topgradient.png);
+	background-repeat:repeat-x;
+	width:auto;
+	height:21px;
+	border:0px solid black;
+	border-left:1px solid black;
+	color:black;
+}
+
+QSplitterHandle
+{
+	background-color:black; /* this does not work. perhaps we should subclass QSplitterHandle to change its style */
+}
+
+SCTableView
+{
+	border:0px;
+}

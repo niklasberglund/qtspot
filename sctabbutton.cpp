@@ -11,7 +11,7 @@ SCTabButton::SCTabButton(QString tabText, QWidget *widget, QWidget *parent) :
 	// default values
 	this->isActive = false;
 
-	this->setStyleSheet("SCTabButton { width:auto; height:21px; border:0px solid black; border-left:1px solid black; color:black; } ");
+	//this->setStyleSheet("SCTabButton { width:auto; height:21px; border:0px solid black; border-left:1px solid black; color:black; } ");
 
 	QObject::connect(this, SIGNAL(clicked()), this, SLOT(selected()));
 }
