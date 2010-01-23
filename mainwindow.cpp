@@ -67,7 +67,8 @@ MainWindow::MainWindow(QWidget *parent)
 	// splitter options
 	mainVerticalSplitter->setOrientation(Qt::Vertical);
 	subHorizontalSplitter->setOrientation(Qt::Horizontal);
-	mainVerticalSplitter->setSizes(QList<int>() << 9999 << 80); // setting the first widget's height to 9999. this is a bit nasty...
+	mainVerticalSplitter->setSizes(QList<int>() << 9999 << 41); // setting the first widget's height to 9999. this is a bit nasty...
+	subHorizontalSplitter->setSizes(QList<int>() << 150 << 9999);
 
 	// hide the splitters' handles
 	mainVerticalSplitter->setHandleWidth(1);

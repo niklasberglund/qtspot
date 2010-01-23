@@ -10,12 +10,8 @@
 #include <QLineEdit>
 
 
-SCWidget::SCWidget(int showTitleBar, QWidget *parent) :
-	QSplitter(parent)
+SCWidget::SCWidget(int showTitleBar, QWidget *parent) : SCSplitter(Qt::Vertical, parent)
 {
-	// style sheet
-	//this->setStyleSheet("SCWidget { background-color:#373737; border:1px solid #000000; }");
-
 	// top
 	this->top = new SCWidgetTop();
 
@@ -24,9 +20,7 @@ SCWidget::SCWidget(int showTitleBar, QWidget *parent) :
 	this->setOrientation(Qt::Vertical);
 	this->setHandleWidth(2);
 
-	//this->verticalLayout = new QVBoxLayout();
 	this->content = new QFrame();
-	//this->content->setStyleSheet("QFrame { background-color:#2a2a2a; }");
 	this->content->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
 	if(showTitleBar == SCWidget::ShowTitleBar)
@@ -39,7 +33,6 @@ SCWidget::SCWidget(int showTitleBar, QWidget *parent) :
 	}
 
 
-	//this->addWidget(this->content);
 	this->addWidget(this->content);
 }
 
