@@ -6,7 +6,7 @@ SCWidgetTop::SCWidgetTop(QWidget *parent) :
 	QFrame(parent)
 {
 	// set up
-	this->setStyleSheet("SCWidgetTop { background-image:url(:/topgradient.png); background-repeat:repeat-x; }");
+	this->setStyleSheet("SCWidgetTop { background-image:url(:/topgradient.png); background-repeat:repeat-x; background-color:red; }");
 	this->setMinimumHeight(21);
 	this->setMaximumHeight(21);
 

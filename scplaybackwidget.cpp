@@ -6,7 +6,7 @@
 #include <QRegion>
 #include "sciconbutton.h"
 
-SCPlaybackWidget::SCPlaybackWidget(QWidget *parent) : SCWidget(0, parent)
+SCPlaybackWidget::SCPlaybackWidget(QWidget *parent) : SCWidget(SCWidget::ShowTitleBar, parent)
 {
 	// initialize layouts and spacer
 	this->mainBoxLayout = new QHBoxLayout();

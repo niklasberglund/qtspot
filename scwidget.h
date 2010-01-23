@@ -5,8 +5,10 @@
 #include <QFrame>
 #include "scwidget.h"
 #include "scwidgettop.h"
+#include <QSplitter>
 
-class SCWidget : public QFrame
+
+class SCWidget : public QSplitter
 {
 Q_OBJECT
 public:
@@ -21,6 +23,7 @@ private:
 	SCWidgetTop *top;
 	QWidget *content;
 	QVBoxLayout *verticalLayout;
+	QSplitter *verticalSplitter;
 
 signals:
 
