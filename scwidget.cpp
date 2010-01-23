@@ -35,7 +35,7 @@ SCWidget::SCWidget(int showTitleBar, QWidget *parent) :
 	}
 	else if(showTitleBar == SCWidget::NoTitleBar)
 	{
-		this->addWidget(new QWidget()); // this is not how we want to handle it... TODO
+		// simply dont add a title bar widget
 	}
 
 
