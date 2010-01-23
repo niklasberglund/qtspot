@@ -13,6 +13,8 @@
 #include "sctracklistitemmodel.h"
 #include "scplaylistitemmodel.h"
 #include <QFile>
+#include "scsplitter.h"
+
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
@@ -53,8 +55,8 @@ MainWindow::MainWindow(QWidget *parent)
 	this->master->getBottomWidget()->setMinimumHeight(41);
 
 	// set up splitters
-	QSplitter *mainVerticalSplitter = new QSplitter(); // splits the main window in 2 - upper parts and playback widget
-	QSplitter *subHorizontalSplitter = new QSplitter(); // splits the upper part horizontally
+	SCSplitter *mainVerticalSplitter = new SCSplitter(); // splits the main window in 2 - upper parts and playback widget
+	SCSplitter *subHorizontalSplitter = new SCSplitter(); // splits the upper part horizontally
 
 	// add widgets to the splitters
 	subHorizontalSplitter->addWidget(this->master->getLeftWidget());
@@ -68,8 +70,8 @@ MainWindow::MainWindow(QWidget *parent)
 	mainVerticalSplitter->setSizes(QList<int>() << 9999 << 80); // setting the first widget's height to 9999. this is a bit nasty...
 
 	// hide the splitters' handles
-	mainVerticalSplitter->setHandleWidth(2);
-	subHorizontalSplitter->setHandleWidth(2);
+	mainVerticalSplitter->setHandleWidth(1);
+	subHorizontalSplitter->setHandleWidth(1);
 
 	// display the widgets we have set up
 	this->setCentralWidget(mainVerticalSplitter);

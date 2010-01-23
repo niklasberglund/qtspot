@@ -5,6 +5,7 @@
 #include "scwidget.h"
 #include "scmaster.h"
 
+
 namespace Ui
 {
     class MainWindow;
