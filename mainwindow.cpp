@@ -70,6 +70,9 @@ MainWindow::MainWindow(QWidget *parent)
 	mainVerticalSplitter->setSizes(QList<int>() << 9999 << 41); // setting the first widget's height to 9999. this is a bit nasty...
 	subHorizontalSplitter->setSizes(QList<int>() << 150 << 9999);
 
+	// widget options
+	subHorizontalSplitter->widget(1)->setStyleSheet("background-color:#373737;"); // color the playlist view's background
+
 	// hide the splitters' handles
 	mainVerticalSplitter->setHandleWidth(1);
 	subHorizontalSplitter->setHandleWidth(1);

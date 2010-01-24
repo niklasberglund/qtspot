@@ -6,11 +6,14 @@
 class SCTabButton : public SCButton
 {
 Q_OBJECT
+Q_PROPERTY(bool selected READ isSelected WRITE setSelected)
 public:
-	explicit SCTabButton(QString tabText, QWidget *widget, QWidget *parent = 0);
+	SCTabButton(QString tabText, QWidget *widget, QWidget *parent = 0);
+	bool isSelected();
+	void setSelected(bool value);
 
 private:
-	bool isActive;
+	bool selectedTab;
 	QWidget *contentWidget;
 
 signals:

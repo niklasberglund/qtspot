@@ -7,6 +7,10 @@
 SCTableView::SCTableView(SCItemModel *useItemModel, int zebra, int horizontalLabels, QWidget *parent) :
 	QTableView(parent)
 {
+	// settings
+	this->horizontalHeader()->setStretchLastSection(true);
+	this->verticalHeader()->setDefaultSectionSize(19); // row height
+
 	// set up the model
 	this->tableItemModel = useItemModel;
 	this->setModel(this->tableItemModel);

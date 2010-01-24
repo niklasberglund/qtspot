@@ -5,6 +5,7 @@
         <file>resources/images/nextButton.gif</file>
         <file>resources/images/bottomgradient.gif</file>
         <file>resources/images/pauseButton.gif</file>
+        <file alias="tableHeaderGradient.gif">resources/images/tableHeaderGradient.gif</file>
     </qresource>
     <qresource prefix="/stylesheets">
         <file alias="application.qss">resources/stylesheets/application.qss</file>

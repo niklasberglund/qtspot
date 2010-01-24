@@ -13,11 +13,20 @@ SCTabButton
 {
 	background-image:url(:/topgradient.png);
 	background-repeat:repeat-x;
-	width:auto;
 	height:21px;
-	border:0px solid black;
-	border-left:1px solid black;
+	border:0px;
+	border-right:1px solid #666666;
+	margin-right:3px;
+
 	color:black;
+	padding-left:3px;
+	padding-right:3px;
+}
+
+SCTabButton[selected="true"]
+{
+	background-color:green;
+	font-size:24px;
 }
 
 QSplitterHandle
@@ -28,4 +37,11 @@ QSplitterHandle
 SCTableView
 {
 	border:0px;
+	font-size:11px;
+}
+
+QHeaderView::section, QHeaderView
+{
+	background-image:url(:/topgradient.png);
+	background-repeat:repeat-x;
 }
