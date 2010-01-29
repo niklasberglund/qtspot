@@ -32,28 +32,6 @@ MainWindow::MainWindow(QWidget *parent)
 	styleSheetFile.open(QFile::ReadOnly);
 	this->setStyleSheet(QString(styleSheetFile.readAll().data())); // this is not the optimal solution... must do clean then install for changes in qcc file to take effect
 
-	// set up the playlist widget(left)
-	SCPlaylistItemModel *playlistItemModel = new SCPlaylistItemModel();
-
-	// set up the main widget, and add some dummy tabs
-	SCTabWidget *mainTabWidget = new SCTabWidget();
-	mainTabWidget->addTab("line edit", new QLineEdit());
-	SCTrackListItemModel *trackListItemModel = new SCTrackListItemModel();
-	SCTableView *dummyTable = new SCTableView(trackListItemModel);
-	mainTabWidget->addTab("table test", dummyTable);
-
-
-	// set up the widgets to be put into the layout
-	this->master->setLeftWidget(new SCWidget());
-	this->master->getLeftWidget()->setWidget(new SCTableView(playlistItemModel, SCTableView::WithoutZebraRows, SCTableView::WithoutHorizontalLabels));
-	this->master->setMainWidget(mainTabWidget);
-	this->master->setBottomWidget(new SCPlaybackWidget());
-
-	this->master->getLeftWidget()->setMaximumWidth(150);
-	this->master->getLeftWidget()->setMinimumWidth(150);
-	this->master->getBottomWidget()->setMaximumHeight(41);
-	this->master->getBottomWidget()->setMinimumHeight(41);
-
 	// set up splitters
 	SCSplitter *mainVerticalSplitter = new SCSplitter(); // splits the main window in 2 - upper parts and playback widget
 	SCSplitter *subHorizontalSplitter = new SCSplitter(); // splits the upper part horizontally

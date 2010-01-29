@@ -15,6 +15,7 @@ public:
 	SCWidget(int showTitleBar = 1, QWidget *parent = 0);
 	enum TitleBar {NoTitleBar, ShowTitleBar};
 	void setWidget(QWidget *widget);
+	QWidget* getContent();
 
 private:
 	protected:

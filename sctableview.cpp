@@ -4,7 +4,7 @@
 #include <QPalette>
 
 
-SCTableView::SCTableView(SCItemModel *useItemModel, int zebra, int horizontalLabels, QWidget *parent) :
+SCTableView::SCTableView(QWidget *parent, SCItemModel *useItemModel, int zebra, int horizontalLabels) :
 	QTableView(parent)
 {
 	// settings

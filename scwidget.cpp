@@ -53,3 +53,9 @@ void SCWidget::showWidget(QWidget *widget)
 {
 	this->setWidget(widget);
 }
+
+
+QWidget* SCWidget::getContent()
+{
+	return this->content;
+}

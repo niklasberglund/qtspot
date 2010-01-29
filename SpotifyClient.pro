@@ -24,7 +24,8 @@ SOURCES += main.cpp \
     sctracklistitemmodel.cpp \
     sctrack.cpp \
     scsplitter.cpp \
-    scsplitterhandle.cpp
+	scsplitterhandle.cpp \
+    sccontentitemmodel.cpp
 HEADERS += mainwindow.h \
     sctabwidget.h \
     scwidget.h \
@@ -42,6 +43,7 @@ HEADERS += mainwindow.h \
     sctracklistitemmodel.h \
     sctrack.h \
     scsplitter.h \
-    scsplitterhandle.h
+	scsplitterhandle.h \
+    sccontentitemmodel.h
 RESOURCES += resources.qrc
 OTHER_FILES += resources/stylesheets/application.qss

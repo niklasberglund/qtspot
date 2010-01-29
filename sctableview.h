@@ -9,7 +9,7 @@ class SCTableView : public QTableView
 {
 Q_OBJECT
 public:
-	SCTableView(SCItemModel *useItemModel = 0, int zebra = SCTableView::WithoutZebraRows, int horizontalLabels = SCTableView::WithHorizontalLabels, QWidget *parent = 0);
+	SCTableView(QWidget *parent = 0, SCItemModel *useItemModel = 0, int zebra = SCTableView::WithoutZebraRows, int horizontalLabels = SCTableView::WithHorizontalLabels);
 
 	// enums
 	enum ZebraRows {WithoutZebraRows, WithZebraRows};

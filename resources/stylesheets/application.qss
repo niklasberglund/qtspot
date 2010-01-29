@@ -42,6 +42,11 @@ SCTableView
 
 QHeaderView::section, QHeaderView
 {
-	background-image:url(:/topgradient.png);
+	background-image:url(":/topgradient.png");
 	background-repeat:repeat-x;
+}
+
+QStandardItem
+{
+	color:red;
 }
