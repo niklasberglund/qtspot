@@ -10,6 +10,7 @@ SCTableView::SCTableView(QWidget *parent, SCItemModel *useItemModel, int zebra, 
 	// settings
 	this->horizontalHeader()->setStretchLastSection(true);
 	this->verticalHeader()->setDefaultSectionSize(19); // row height
+	this->setSelectionBehavior(QTableView::SelectRows);
 
 	// set up the model
 	this->tableItemModel = useItemModel;
