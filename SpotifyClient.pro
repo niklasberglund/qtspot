@@ -18,14 +18,19 @@ SOURCES += main.cpp \
     sciconbutton.cpp \
     sctableview.cpp \
     scplaylistitemmodel.cpp \
-    scmaster.cpp \
+	scmastercontroller.cpp \
     scplaylist.cpp \
     scitemmodel.cpp \
     sctracklistitemmodel.cpp \
     sctrack.cpp \
     scsplitter.cpp \
-	scsplitterhandle.cpp \
-    sccontentitemmodel.cpp
+    scsplitterhandle.cpp \
+    sccontentitemmodel.cpp \
+    scitem.cpp \
+    scplugincontroller.cpp \
+    scsettings.cpp \
+    scapplication.cpp \
+    scplugin.cpp
 HEADERS += mainwindow.h \
     sctabwidget.h \
     scwidget.h \
@@ -37,13 +42,20 @@ HEADERS += mainwindow.h \
     sciconbutton.h \
     sctableview.h \
     scplaylistitemmodel.h \
-    scmaster.h \
+	scmastercontroller.h \
     scplaylist.h \
     scitemmodel.h \
     sctracklistitemmodel.h \
     sctrack.h \
     scsplitter.h \
-	scsplitterhandle.h \
-    sccontentitemmodel.h
+    scsplitterhandle.h \
+    sccontentitemmodel.h \
+    scleftmenuplugininterface.h \
+    scplugininterface.h \
+    scitem.h \
+    scplugincontroller.h \
+    scsettings.h \
+    scapplication.h \
+    scplugin.h
 RESOURCES += resources.qrc
 OTHER_FILES += resources/stylesheets/application.qss

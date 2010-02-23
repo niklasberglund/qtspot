@@ -1,3 +1,7 @@
+/*
+	DEPRECATED
+*/
+
 #ifndef SCPLAYLISTITEMMODEL_H
 #define SCPLAYLISTITEMMODEL_H
 
@@ -22,3 +26,8 @@ public slots:
 };
 
 #endif // SCPLAYLISTITEMMODEL_H
+
+
+/*
+	DEPRECATED
+*/

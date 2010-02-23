@@ -29,3 +29,9 @@ int SCTrack::getLength()
 }
 
 
+void SCTrack::play()
+{
+
+}
+
+

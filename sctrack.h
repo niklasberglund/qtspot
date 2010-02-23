@@ -12,6 +12,7 @@ public:
 	QString getName();
 	void setLength(int trackLength);
 	int getLength();
+	void play();
 
 private:
 	QString name;

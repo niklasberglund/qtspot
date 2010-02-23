@@ -1,3 +1,8 @@
+/*
+	DEPRECATED
+*/
+
+
 #include "scplaylistitemmodel.h"
 #include <QList>
 #include <QFont>
@@ -21,3 +26,7 @@ void SCPlaylistItemModel::addPlaylist(SCPlaylist *playlist)
 
 	this->appendRow(items);
 }
+
+/*
+	DEPRECATED
+*/

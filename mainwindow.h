@@ -24,7 +24,7 @@ private:
 	SCWidget *leftWidget;
 	QWidget *mainWidget;
 	QWidget *bottomWidget;
-	SCMaster *master;
+	SCMasterController *master;
 };
 
 #endif // MAINWINDOW_H

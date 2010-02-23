@@ -1,4 +1,4 @@
-#include "scmaster.h"
+#include "scmastercontroller.h"
 #include <QDebug>
 #include "sctableview.h"
 #include <QBoxLayout>
@@ -9,7 +9,7 @@
 #include "sctracklistitemmodel.h"
 
 
-SCMaster::SCMaster()
+SCMasterController::SCMasterController()
 {
 	// set up the main widget, and add some dummy tabs
 	SCTabWidget *mainTabWidget = new SCTabWidget();
@@ -51,38 +51,38 @@ SCMaster::SCMaster()
 }
 
 
-void SCMaster::setLeftWidget(SCWidget* widget)
+void SCMasterController::setLeftWidget(SCWidget* widget)
 {
 	this->leftWidget = widget;
 }
 
 
-void SCMaster::setMainWidget(SCWidget *widget)
+void SCMasterController::setMainWidget(SCWidget *widget)
 {
 	this->mainWidget = widget;
 }
 
 
-void SCMaster::setBottomWidget(SCWidget *widget)
+void SCMasterController::setBottomWidget(SCWidget *widget)
 {
 	this->bottomWidget = widget;
 }
 
 
 // getters
-SCWidget* SCMaster::getLeftWidget()
+SCWidget* SCMasterController::getLeftWidget()
 {
 	return this->leftWidget;
 }
 
 
-SCWidget* SCMaster::getMainWidget()
+SCWidget* SCMasterController::getMainWidget()
 {
 	return this->mainWidget;
 }
 
 
-SCWidget* SCMaster::getBottomWidget()
+SCWidget* SCMasterController::getBottomWidget()
 {
 	return this->bottomWidget;
 }

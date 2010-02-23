@@ -31,19 +31,22 @@ SCTabButton[selected="true"]
 
 QSplitterHandle
 {
-	background-color:black; /* this does not work. perhaps we should subclass QSplitterHandle to change its style */
+	background-color:black;
 }
 
 SCTableView
 {
 	border:0px;
 	font-size:11px;
+	color:#e3e3e3;
 }
 
 QHeaderView::section, QHeaderView
 {
-	background-image:url(":/topgradient.png");
+	border-image:url(":/topgradient.png");
 	background-repeat:repeat-x;
+	height:22px;
+	color:#000000;
 }
 
 QStandardItem

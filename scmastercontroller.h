@@ -6,10 +6,10 @@
 #include "sctableview.h"
 
 
-class SCMaster
+class SCMasterController
 {
 public:
-    SCMaster();
+	SCMasterController();
 
 	// setters
 	void setLeftWidget(SCWidget* widget);

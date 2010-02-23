@@ -14,13 +14,21 @@
 #include "scplaylistitemmodel.h"
 #include <QFile>
 #include "scsplitter.h"
+#include "scplugincontroller.h"
+#include "scsettings.h"
+#include "scapplication.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
 {
+	// testing. TODO: move this to somewhere else
+	SCPluginController *pluginController = new SCPluginController();
+	SCSettings *settings = new SCSettings(this);
+	qDebug() << settings->getPluginsDirectory();
+
 	// "master" holds instances of the basic widgets in the client
-	this->master = new SCMaster();
+	this->master = new SCMasterController();
 
 	// main window settings
 	this->setMinimumSize(600,400);
