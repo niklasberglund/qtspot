@@ -12,6 +12,6 @@ public:
 };
 
 
-Q_DECLARE_INTERFACE(SCLeftMenuPluginInterface, "SCLeftMenuPluginInterface/1.0")
+Q_DECLARE_INTERFACE(SCLeftMenuPluginInterface, "SCLeftMenuPluginInterface/0.1")
 
 #endif // SCLEFTMENUPLUGININTERFACE_H

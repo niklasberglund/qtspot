@@ -3,7 +3,7 @@
 
 #include <QtGui/QMainWindow>
 #include "scwidget.h"
-#include "scmaster.h"
+#include "scmastercontroller.h"
 
 
 namespace Ui
