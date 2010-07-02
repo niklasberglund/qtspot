@@ -13,6 +13,9 @@ SCTableView::SCTableView(QWidget *parent, SCItemModel *useItemModel, int zebra, 
 	this->setSelectionBehavior(QTableView::SelectRows);
 
 	// set up the model
+	if(useItemModel == 0) {
+		useItemModel = new SCItemModel();
+	}
 	this->tableItemModel = useItemModel;
 	this->setModel(this->tableItemModel);
 

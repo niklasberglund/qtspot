@@ -15,7 +15,11 @@ public:
 	void loadPlugins();
 	SCPlugin* loadPlugin(QDir pluginDir);
 
+	// getters
+	QList<SCPlugin*>* getPlugins();
+
 private:
+	QList<SCPlugin*>* plugins;
 	QDir pluginsDirectory;
 };
 

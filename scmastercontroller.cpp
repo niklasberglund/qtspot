@@ -15,9 +15,14 @@ SCMasterController::SCMasterController()
 	SCTabWidget *mainTabWidget = new SCTabWidget();
 	mainTabWidget->addTab("line edit", new QLineEdit());
 	SCTrackListItemModel *trackListItemModel = new SCTrackListItemModel();
+
+	// dummy table tab
 	SCTableView *dummyTable = new SCTableView(NULL, trackListItemModel);
 	mainTabWidget->addTab("table test", dummyTable);
+
 	this->mainWidget = mainTabWidget;
+	this->mainWidget = new SCWidget();
+
 
 	// set up the bottom widget
 	this->bottomWidget = new SCPlaybackWidget();
@@ -33,8 +38,8 @@ SCMasterController::SCMasterController()
 	SCPlaylistItemModel *playlistItemModel = new SCPlaylistItemModel();
 
 	// initiate widgets
-	SCTableView *topLevelTableView = new SCTableView(leftWidget->getContent());
-	SCTableView *searchTableView = new SCTableView(leftWidget->getContent());
+	//SCTableView *topLevelTableView = new SCTableView(leftWidget->getContent());
+	//SCTableView *searchTableView = new SCTableView(leftWidget->getContent());
 	SCTableView *playlistTableView = new SCTableView(leftWidget->getContent(), playlistItemModel, SCTableView::WithoutZebraRows, SCTableView::WithoutHorizontalLabels);
 
 	// set up layout
@@ -60,6 +65,8 @@ void SCMasterController::setLeftWidget(SCWidget* widget)
 void SCMasterController::setMainWidget(SCWidget *widget)
 {
 	this->mainWidget = widget;
+
+	emit mainWidgetChanged(widget);
 }
 
 
@@ -85,5 +92,11 @@ SCWidget* SCMasterController::getMainWidget()
 SCWidget* SCMasterController::getBottomWidget()
 {
 	return this->bottomWidget;
+}
+
+
+// SLOTS
+void SCMasterController::changeMainWidget(SCWidget *widget) {
+	this->setMainWidget(widget);
 }
 

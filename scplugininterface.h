@@ -5,15 +5,14 @@
 
 class SCPluginInterface
 {
-	/*
-	empty at the moment. might want to have functions that returns name and description of the plugin etc in here.. in the future...
-	so plugins should use this interface
-	*/
 public:
-	SCPluginInterface(SCMasterController*){};
+	//SCPluginInterface(SCMasterController*);
+
+	virtual QString getName() = 0;
+	virtual ~SCPluginInterface() {}
 };
 
 
-Q_DECLARE_INTERFACE(SCPluginInterface, "SCPluginInterface/0.1")
+Q_DECLARE_INTERFACE(SCPluginInterface, "SCPluginInterface/0.2")
 
 #endif // SCPLUGININTERFACE_H

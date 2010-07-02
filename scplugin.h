@@ -10,6 +10,9 @@ class SCPlugin : public QObject
 Q_OBJECT
 public:
 	SCPlugin(QObject *parent = 0, QString pluginPath = QString());
+	QObject* instance();
+
+	QString getName();
 
 private:
 	QPluginLoader *pluginLoader;

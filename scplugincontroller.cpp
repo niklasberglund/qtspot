@@ -4,6 +4,7 @@
 #include "scsettings.h"
 #include "scplugin.h"
 #include <QLibrary>
+#include "scplugininterface.h"
 
 
 SCPluginController::SCPluginController(QObject *parent) :
@@ -11,15 +12,14 @@ SCPluginController::SCPluginController(QObject *parent) :
 {
 	this->pluginsDirectory = QApplication::applicationDirPath();
 
+	this->plugins = new QList<SCPlugin*>();
+
 	this->loadPlugins();
 }
 
 
 void SCPluginController::loadPlugins()
 {
-	//qDebug() << "scanning directory for plugins: " << qApp->getSettings();
-	//qDebug() << SCApplication::instance()->getSettings();
-
 	SCSettings *settings = new SCSettings(this);
 
 	qDebug() << "begin looking for plugins";
@@ -34,7 +34,11 @@ void SCPluginController::loadPlugins()
 		qDebug() << currentPluginDir;
 
 
-		this->loadPlugin(currentPluginDir);
+		SCPlugin *plugin = this->loadPlugin(currentPluginDir);
+
+		if(plugin) {
+			this->plugins->append(plugin);
+		}
 	}
 
 	qDebug() << "finished looking for plugins";
@@ -59,6 +63,13 @@ SCPlugin* SCPluginController::loadPlugin(QDir pluginDir)
 			{
 				qDebug() << "Loading plugin " << pluginFile.fileName();
 				SCPlugin *plugin = new SCPlugin(this, pluginFile.fileName());
+
+				qDebug() << "Calling function in the just loaded plugin...";
+				qDebug() << "The loaded plugins name is: " << qobject_cast<SCPluginInterface*>(plugin->instance())->getName();
+
+				//plugin->instance()->getLeftMenuItemModels();
+
+				return plugin;
 			}
 			else
 			{
@@ -66,6 +77,13 @@ SCPlugin* SCPluginController::loadPlugin(QDir pluginDir)
 			}
 		}
 	}
+
+	return 0;
+}
+
+
+QList<SCPlugin*>* SCPluginController::getPlugins() {
+	return this->plugins;
 }
 
 

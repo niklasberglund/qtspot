@@ -16,7 +16,7 @@ SCTabWidget::SCTabWidget(QWidget *parent) : SCWidget(SCWidget::ShowTitleBar, par
 	// top
 	this->addTab("asd", new QCheckBox());
 	this->addTab("test", new QLineEdit());
-	this->addTab("table", new SCTableView());
+	this->addTab("empty table", new SCTableView());
 	this->addTab("qweqwe", new QWidget(), 1);
 }
 

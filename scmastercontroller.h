@@ -16,16 +16,24 @@ public:
 	void setMainWidget(SCWidget *widget);
 	void setBottomWidget(SCWidget *widget);
 
-
 	// getters
 	SCWidget* getLeftWidget();
 	SCWidget *getMainWidget();
 	SCWidget* getBottomWidget();
 
+
 private:
 	SCWidget *leftWidget;
 	SCWidget *mainWidget;
 	SCWidget *bottomWidget;
+
+
+signals:
+	void mainWidgetChanged();
+
+
+public slots:
+	void changeMainWidget(SCWidget *widget);
 };
 
 #endif // SCMASTER_H
